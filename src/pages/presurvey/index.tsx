@@ -235,27 +235,37 @@ const Presurvey = () => {
 								How well do you understand this description to annotate data
 								associate with <b>symptoms and medical terminologies</b>?
 							</FormLabel>
-							<Paper sx={{ m: 1 }} variant="outlined">
-								<ul>
-									<li>
-										{" "}
-										<Typography sx={{ fontSize: "18px" }}>
-											Symptom (sign) : An objective evidence that a patient or
-											doctor is able to notice from the patient's body. Based on
-											symptoms, doctors are able to judge patients' conditions
-											or diseases.
-										</Typography>
-									</li>
+							<Paper sx={{ m: 1, p: 2 }} variant="outlined">
+								<Typography sx={{ fontSize: "18px" }}>
+									<b>Symptom (sign)</b>
+									<br />
+									An objective evidence that a patient or doctor is able to
+									notice from the patient's body. Based on symptoms, doctors are
+									able to judge patients' conditions or diseases. (e.g., rash,
+									high blood pressure, headache, fatigue)
+								</Typography>
+								<Paper sx={{ m: 1, p: 2 }} variant="outlined">
 									<ul>
-										<li>
-											<Typography sx={{ fontSize: "18px" }}>
-												{" "}
-												Example: rash, headache, fatigue, measles,
-												conjunctivitis
-											</Typography>
-										</li>
+										<Typography sx={{ fontSize: "18px" }}>
+											{" "}
+											The patient has had increasing{" "}
+											<span style={{ backgroundColor: "yellow" }}>
+												dyspnea on exertion
+											</span>
+										</Typography>
 									</ul>
-								</ul>
+									<ul>
+										<Typography sx={{ fontSize: "18px" }}>
+											<span style={{ backgroundColor: "yellow" }}>
+												the wound
+											</span>{" "}
+											was noted to be clean with{" "}
+											<span style={{ backgroundColor: "yellow" }}>
+												mild serous drainage
+											</span>
+										</Typography>
+									</ul>
+								</Paper>
 							</Paper>
 							<RadioGroup name="pre-3-2">
 								<FormControlLabel
