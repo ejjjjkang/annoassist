@@ -113,17 +113,17 @@ const Presurvey = () => {
 							value="1"
 						/>
 						<FormControlLabel
-							label="A few times"
+							label="Once or twice a year"
 							control={<Radio />}
 							value="2"
 						/>
 						<FormControlLabel
-							label="Once a month"
+							label="three or more times a year"
 							control={<Radio />}
 							value="3"
 						/>
 						<FormControlLabel
-							label="Once or twice a seek"
+							label="Once a month"
 							control={<Radio />}
 							value="4"
 						/>
@@ -137,6 +137,7 @@ const Presurvey = () => {
 							control={<Radio />}
 							value="6"
 						/>
+						<FormControlLabel label="Everyday" control={<Radio />} value="7" />
 					</RadioGroup>
 				</FormControl>
 				<FormControl required sx={{ padding: 3 }}>
@@ -152,17 +153,17 @@ const Presurvey = () => {
 							value="1"
 						/>
 						<FormControlLabel
-							label="A few times"
+							label="Once or twice a year"
 							control={<Radio />}
 							value="2"
 						/>
 						<FormControlLabel
-							label="Once a month"
+							label="three or more times a year"
 							control={<Radio />}
 							value="3"
 						/>
 						<FormControlLabel
-							label="Once or twice a seek"
+							label="Once a month"
 							control={<Radio />}
 							value="4"
 						/>
@@ -176,98 +177,65 @@ const Presurvey = () => {
 							control={<Radio />}
 							value="6"
 						/>
+						<FormControlLabel label="Everyday" control={<Radio />} value="7" />
 					</RadioGroup>
 				</FormControl>
 				<Divider></Divider>
-				<Typography variant="h6" sx={{ m: 5 }}>
-					Please read descriptions carefully
+				<Typography variant="h6" sx={{ mt: 5 }}>
+					3. Please read the instruction below, and answer 3-1 and 3-2
+					questions.
 				</Typography>
+				<Paper sx={{ m: 1, p: 2 }} variant="outlined">
+					<Typography variant="h5">
+						<b>Symptom (sign)</b>
+					</Typography>
+					<Typography
+						mt={2}
+						mb={2}
+						sx={{ fontSize: "18px", fontWeight: 600, color: "#0E7490" }}
+					>
+						Definition
+					</Typography>
+					<Typography sx={{ fontSize: "18px" }}>
+						An objective evidence of diseases perceptible to a doctor and
+						subjective evidence of disease perceived by a patient from the
+						patient. Based on symptoms, doctors are able to judge patients'
+						conditions or diseases.
+					</Typography>
+					<Typography
+						mt={2}
+						mb={2}
+						sx={{ fontSize: "18px", fontWeight: 600, color: "#0E7490" }}
+					>
+						Annotation examples
+					</Typography>
+					<ul>
+						<Typography sx={{ fontSize: "18px" }}>
+							The patient has had increasing{" "}
+							<span style={{ backgroundColor: "#CFFAFE" }}>
+								dyspnea on exertion
+							</span>
+						</Typography>
+					</ul>
+					<ul>
+						<Typography sx={{ fontSize: "18px" }}>
+							<span style={{ backgroundColor: "#CFFAFE" }}>the wound</span> was
+							noted to be clean with{" "}
+							<span style={{ backgroundColor: "#CFFAFE" }}>
+								mild serous drainage
+							</span>
+						</Typography>
+					</ul>
+				</Paper>
 				<Box flexDirection={"row"} sx={{ padding: 3, display: "flex" }}>
 					<Box sx={{ maxWidth: "50%" }}>
 						<FormControl required sx={{ padding: 3 }}>
 							<FormLabel>
-								3-1. How confident are you in identifying medical symptoms/signs
-								or relevant terminologies?
+								3-1. How clearly do you understand this instruction to annotate
+								data associate with <b>symptoms and medical terminologies</b>?
 							</FormLabel>
+
 							<RadioGroup name="pre-3-1">
-								<FormControlLabel
-									label="Extremely unconfident"
-									control={<Radio />}
-									value="1"
-								/>
-								<FormControlLabel
-									label="Moderately unconfident"
-									control={<Radio />}
-									value="2"
-								/>
-								<FormControlLabel
-									label="Slightly unconfident"
-									control={<Radio />}
-									value="3"
-								/>
-								<FormControlLabel
-									label="Nor confident nor unconfident"
-									control={<Radio />}
-									value="4"
-								/>
-								<FormControlLabel
-									label="Slightly confident"
-									control={<Radio />}
-									value="5"
-								/>
-								<FormControlLabel
-									label="Moderately confident"
-									control={<Radio />}
-									value="6"
-								/>
-								<FormControlLabel
-									label="Extremely confident"
-									control={<Radio />}
-									value="7"
-								/>
-							</RadioGroup>
-						</FormControl>
-					</Box>
-					<Box sx={{ maxWidth: "50%" }}>
-						<FormControl required sx={{ padding: 3 }}>
-							<FormLabel>
-								3-2. Below is a description to assist you in identifying labels.
-								How well do you understand this description to annotate data
-								associate with <b>symptoms and medical terminologies</b>?
-							</FormLabel>
-							<Paper sx={{ m: 1, p: 2 }} variant="outlined">
-								<Typography sx={{ fontSize: "18px" }}>
-									<b>Symptom (sign)</b>
-									<br />
-									An objective evidence that a patient or doctor is able to
-									notice from the patient's body. Based on symptoms, doctors are
-									able to judge patients' conditions or diseases. (e.g., rash,
-									high blood pressure, headache, fatigue)
-								</Typography>
-								<Paper sx={{ m: 1, p: 2 }} variant="outlined">
-									<ul>
-										<Typography sx={{ fontSize: "18px" }}>
-											{" "}
-											The patient has had increasing{" "}
-											<span style={{ backgroundColor: "yellow" }}>
-												dyspnea on exertion
-											</span>
-										</Typography>
-									</ul>
-									<ul>
-										<Typography sx={{ fontSize: "18px" }}>
-											<span style={{ backgroundColor: "yellow" }}>
-												the wound
-											</span>{" "}
-											was noted to be clean with{" "}
-											<span style={{ backgroundColor: "yellow" }}>
-												mild serous drainage
-											</span>
-										</Typography>
-									</ul>
-								</Paper>
-							</Paper>
-							<RadioGroup name="pre-3-2">
 								<FormControlLabel
 									label="Extremely not understanable"
 									control={<Radio />}
@@ -306,80 +274,100 @@ const Presurvey = () => {
 							</RadioGroup>
 						</FormControl>
 					</Box>
+					<Box sx={{ maxWidth: "50%" }}>
+						<FormControl required sx={{ padding: 3 }}>
+							<FormLabel>
+								3-2. Based on the instruction, how confident are you in
+								annotating symptoms/signs or relevant terminologies in a
+								document?
+							</FormLabel>
+							<RadioGroup name="pre-3-2">
+								<FormControlLabel
+									label="Extremely unconfident"
+									control={<Radio />}
+									value="1"
+								/>
+								<FormControlLabel
+									label="Moderately unconfident"
+									control={<Radio />}
+									value="2"
+								/>
+								<FormControlLabel
+									label="Slightly unconfident"
+									control={<Radio />}
+									value="3"
+								/>
+								<FormControlLabel
+									label="Nor confident nor unconfident"
+									control={<Radio />}
+									value="4"
+								/>
+								<FormControlLabel
+									label="Slightly confident"
+									control={<Radio />}
+									value="5"
+								/>
+								<FormControlLabel
+									label="Moderately confident"
+									control={<Radio />}
+									value="6"
+								/>
+								<FormControlLabel
+									label="Extremely confident"
+									control={<Radio />}
+									value="7"
+								/>
+							</RadioGroup>
+						</FormControl>
+					</Box>
 				</Box>
+				<Typography variant="h6" sx={{ mt: 5 }}>
+					4. Please read the instruction below, and answer 4-1 and 4-2
+					questions.
+				</Typography>
+				<Paper sx={{ m: 1, p: 2 }} variant="outlined">
+					<Typography variant="h5">
+						<b>Lab Value</b>
+					</Typography>
+					<Typography
+						mt={2}
+						mb={2}
+						sx={{ fontSize: "18px", fontWeight: 600, color: "#0E7490" }}
+					>
+						Definition
+					</Typography>
+					<Typography sx={{ fontSize: "18px" }}>
+						The value obtained from various laboratory tests conducted on
+						samples such as blood, urine, or tissue. It is used by a doctor to
+						diagnose and monitor medical conditions, assess overall health
+						conditions, and guide treatment decisions.
+					</Typography>
+					<Typography
+						mt={2}
+						mb={2}
+						sx={{ fontSize: "18px", fontWeight: 600, color: "#0E7490" }}
+					>
+						Annotation examples
+					</Typography>
+					<ul>
+						<Typography sx={{ fontSize: "18px" }}>
+							White blood cell
+							<span style={{ backgroundColor: "#CFFAFE" }}>3.0</span>,
+							hemoglobin{" "}
+							<span style={{ backgroundColor: "#CFFAFE" }}>13.9,</span>, and
+							lymphocytes <span style={{ backgroundColor: "#CFFAFE" }}>48</span>
+						</Typography>
+					</ul>
+				</Paper>
 				<Box flexDirection={"row"} sx={{ padding: 3, display: "flex" }}>
 					<Box sx={{ maxWidth: "50%" }}>
 						<FormControl required sx={{ padding: 3 }}>
 							<FormLabel>
-								4-1. How confident are you in identifying events that patient
-								undergo during a clinical study?
+								4-1. How clearly do you understand this instruction to annotate
+								data associate with <b>Lab value</b>?
 							</FormLabel>
 							<RadioGroup name="pre-4-1">
 								<FormControlLabel
-									label="Extremely unconfident"
-									control={<Radio />}
-									value="1"
-								/>
-								<FormControlLabel
-									label="Moderately unconfident"
-									control={<Radio />}
-									value="2"
-								/>
-								<FormControlLabel
-									label="Slightly unconfident"
-									control={<Radio />}
-									value="3"
-								/>
-								<FormControlLabel
-									label="Nor confident nor unconfident"
-									control={<Radio />}
-									value="4"
-								/>
-								<FormControlLabel
-									label="Slightly confident"
-									control={<Radio />}
-									value="5"
-								/>
-								<FormControlLabel
-									label="Moderately confident"
-									control={<Radio />}
-									value="6"
-								/>
-								<FormControlLabel
-									label="Extremely confident"
-									control={<Radio />}
-									value="7"
-								/>
-							</RadioGroup>
-						</FormControl>
-					</Box>
-					<Box sx={{ maxWidth: "50%" }}>
-						<FormControl required sx={{ padding: 3 }}>
-							<FormLabel>
-								4-2. Below is the description to help you identify labels. How
-								well do you understand this description to annotate data
-								associate with <b>clinical event</b>?
-							</FormLabel>
-							<Paper sx={{ m: 1 }} variant="outlined">
-								<ul>
-									<li>
-										{" "}
-										<Typography sx={{ fontSize: "18px" }}>
-											Clinical event : All those happenings of medical interest
-											which patients undergo during a clinical study{" "}
-										</Typography>
-									</li>
-									<ul>
-										<li>
-											<Typography sx={{ fontSize: "18px" }}>
-												Example: a therapy, hospitalization, blood sampling
-											</Typography>
-										</li>
-									</ul>
-								</ul>
-							</Paper>
-							<RadioGroup name="pre-4-2">
-								<FormControlLabel
 									label="Extremely not understanable"
 									control={<Radio />}
 									value="1"
@@ -417,82 +405,98 @@ const Presurvey = () => {
 							</RadioGroup>
 						</FormControl>
 					</Box>
-				</Box>
+					<Box sx={{ maxWidth: "50%" }}>
+						<FormControl required sx={{ padding: 3 }}>
+							<FormLabel>
+								4-2. Based on the instruction above, how confident are you in
+								annotating <b>lab value</b> fields in a document?
+							</FormLabel>
 
+							<RadioGroup name="pre-4-2">
+								<FormControlLabel
+									label="Extremely unconfident"
+									control={<Radio />}
+									value="1"
+								/>
+								<FormControlLabel
+									label="Moderately unconfident"
+									control={<Radio />}
+									value="2"
+								/>
+								<FormControlLabel
+									label="Slightly unconfident"
+									control={<Radio />}
+									value="3"
+								/>
+								<FormControlLabel
+									label="Nor confident nor unconfident"
+									control={<Radio />}
+									value="4"
+								/>
+								<FormControlLabel
+									label="Slightly confident"
+									control={<Radio />}
+									value="5"
+								/>
+								<FormControlLabel
+									label="Moderately confident"
+									control={<Radio />}
+									value="6"
+								/>
+								<FormControlLabel
+									label="Extremely confident"
+									control={<Radio />}
+									value="7"
+								/>
+							</RadioGroup>
+						</FormControl>
+					</Box>
+				</Box>
+				<Typography variant="h6" sx={{ mt: 5 }}>
+					5. Please read the instruction below, and answer 5-1 and 5-2
+					questions.
+				</Typography>
+				<Paper sx={{ m: 1, p: 2 }} variant="outlined">
+					<Typography variant="h5">
+						<b>Diagnostic_procedure</b>
+					</Typography>
+					<Typography
+						mt={2}
+						mb={2}
+						sx={{ fontSize: "18px", fontWeight: 600, color: "#0E7490" }}
+					>
+						Definition
+					</Typography>
+					<Typography sx={{ fontSize: "18px" }}>
+						A test used to help figure out what disease or condition a person
+						has based on their signs and symptoms. It may also be used to help
+						plan treatment, find out how well treatment is working, and make a
+						prognosis.
+					</Typography>
+					<Typography
+						mt={2}
+						mb={2}
+						sx={{ fontSize: "18px", fontWeight: 600, color: "#0E7490" }}
+					>
+						Annotation examples
+					</Typography>
+					<ul>
+						<Typography sx={{ fontSize: "18px" }}>
+							There is drainage of pus and hence{" "}
+							<span style={{ backgroundColor: "#CFFAFE" }}>drainage</span> was
+							performed.
+						</Typography>
+					</ul>
+				</Paper>
 				<Box flexDirection={"row"} sx={{ padding: 3, display: "flex" }}>
 					<Box sx={{ maxWidth: "50%" }}>
 						<FormControl required sx={{ padding: 3 }}>
 							<FormLabel>
-								5-1. How confident are you in identifying the specific range of
-								values that labs report to determine a patient's normal
-								condition?
+								5-1. How clearly do you understand this instruction to annotate
+								data associate with <b>Diagnostic procedure</b>?
 							</FormLabel>
 							<RadioGroup name="pre-5-1">
 								<FormControlLabel
-									label="Extremely unconfident"
-									control={<Radio />}
-									value="1"
-								/>
-								<FormControlLabel
-									label="Moderately unconfident"
-									control={<Radio />}
-									value="2"
-								/>
-								<FormControlLabel
-									label="Slightly unconfident"
-									control={<Radio />}
-									value="3"
-								/>
-								<FormControlLabel
-									label="Nor confident nor unconfident"
-									control={<Radio />}
-									value="4"
-								/>
-								<FormControlLabel
-									label="Slightly confident"
-									control={<Radio />}
-									value="5"
-								/>
-								<FormControlLabel
-									label="Moderately confident"
-									control={<Radio />}
-									value="6"
-								/>
-								<FormControlLabel
-									label="Extremely confident"
-									control={<Radio />}
-									value="7"
-								/>
-							</RadioGroup>
-						</FormControl>
-					</Box>
-					<Box sx={{ maxWidth: "50%" }}>
-						<FormControl required sx={{ padding: 3 }}>
-							<FormLabel>
-								5-2. Below is the description to help you identify labels. With
-								this description, How well do you understand this description to
-								annotate data associate with the <b>Lab value</b> field?
-							</FormLabel>
-							<Paper sx={{ m: 1 }} variant="outlined">
-								<ul>
-									<li>
-										{" "}
-										<Typography sx={{ fontSize: "18px" }}>
-											Lab value : Reference values that labs admit as the range
-											of status
-										</Typography>
-									</li>
-									<ul>
-										<li>
-											<Typography>
-												Example: 55 ng/mL, Positive, Negative{" "}
-											</Typography>
-										</li>
-									</ul>
-								</ul>
-							</Paper>
-							<RadioGroup name="pre-5-2">
-								<FormControlLabel
 									label="Extremely not understanable"
 									control={<Radio />}
 									value="1"
@@ -530,79 +534,97 @@ const Presurvey = () => {
 							</RadioGroup>
 						</FormControl>
 					</Box>
+					<Box sx={{ maxWidth: "50%" }}>
+						<FormControl required sx={{ padding: 3 }}>
+							<FormLabel>
+								5-2. Based on the instruction above, how confident are you in
+								annotating <b>Diagnostic procedure</b> fields in a document?
+							</FormLabel>
+
+							<RadioGroup name="pre-5-2">
+								<FormControlLabel
+									label="Extremely unconfident"
+									control={<Radio />}
+									value="1"
+								/>
+								<FormControlLabel
+									label="Moderately unconfident"
+									control={<Radio />}
+									value="2"
+								/>
+								<FormControlLabel
+									label="Slightly unconfident"
+									control={<Radio />}
+									value="3"
+								/>
+								<FormControlLabel
+									label="Nor confident nor unconfident"
+									control={<Radio />}
+									value="4"
+								/>
+								<FormControlLabel
+									label="Slightly confident"
+									control={<Radio />}
+									value="5"
+								/>
+								<FormControlLabel
+									label="Moderately confident"
+									control={<Radio />}
+									value="6"
+								/>
+								<FormControlLabel
+									label="Extremely confident"
+									control={<Radio />}
+									value="7"
+								/>
+							</RadioGroup>
+						</FormControl>
+					</Box>
 				</Box>
+				<Typography variant="h6" sx={{ mt: 5 }}>
+					6. Please read the instruction below, and answer 6-1 and 6-2
+					questions.
+				</Typography>
+				<Paper sx={{ m: 1, p: 2 }} variant="outlined">
+					<Typography variant="h5">
+						<b>Medication</b>
+					</Typography>
+					<Typography
+						mt={2}
+						mb={2}
+						sx={{ fontSize: "18px", fontWeight: 600, color: "#0E7490" }}
+					>
+						Definition
+					</Typography>
+					<Typography sx={{ fontSize: "18px" }}>
+						A list of medications that contains drugs, drug instructions, or
+						other preparations.
+					</Typography>
+					<Typography
+						mt={2}
+						mb={2}
+						sx={{ fontSize: "18px", fontWeight: 600, color: "#0E7490" }}
+					>
+						Annotation examples
+					</Typography>
+					<ul>
+						<Typography sx={{ fontSize: "18px" }}>
+							<span style={{ backgroundColor: "#CFFAFE" }}>Fluticasone</span>/
+							<span style={{ backgroundColor: "#CFFAFE" }}>vilanterol</span> is
+							a combination drug and its trade name is Breo Ellipta. dyspnea on
+							exertion
+						</Typography>
+					</ul>
+				</Paper>
 				<Box flexDirection={"row"} sx={{ padding: 3, display: "flex" }}>
 					<Box sx={{ maxWidth: "50%" }}>
 						<FormControl required sx={{ padding: 3 }}>
 							<FormLabel>
-								6-1. How confident are you in identifying diagnostic procedures?
+								6-1. How clearly do you understand this instruction to annotate
+								data associate with <b>Medication</b> ?
 							</FormLabel>
 							<RadioGroup name="pre-6-1">
 								<FormControlLabel
-									label="Extremely unconfident"
-									control={<Radio />}
-									value="1"
-								/>
-								<FormControlLabel
-									label="Moderately unconfident"
-									control={<Radio />}
-									value="2"
-								/>
-								<FormControlLabel
-									label="Slightly unconfident"
-									control={<Radio />}
-									value="3"
-								/>
-								<FormControlLabel
-									label="Nor confident nor unconfident"
-									control={<Radio />}
-									value="4"
-								/>
-								<FormControlLabel
-									label="Slightly confident"
-									control={<Radio />}
-									value="5"
-								/>
-								<FormControlLabel
-									label="Moderately confident"
-									control={<Radio />}
-									value="6"
-								/>
-								<FormControlLabel
-									label="Extremely confident"
-									control={<Radio />}
-									value="7"
-								/>
-							</RadioGroup>
-						</FormControl>
-					</Box>
-					<Box sx={{ maxWidth: "50%" }}>
-						<FormControl required sx={{ padding: 3 }}>
-							<FormLabel>
-								6-2. Below is the description to help you identify labels. How
-								well do you understand this description to annotate data
-								associate with <b>Diagnostic_procedure</b>?
-							</FormLabel>
-							<Paper sx={{ m: 1 }} variant="outlined">
-								<ul>
-									<li>
-										{" "}
-										<Typography sx={{ fontSize: "18px" }}>
-											Diagnostic_procedure : Procedures performed by the
-											clinician to make diagnosis decision.
-										</Typography>
-									</li>
-									<ul>
-										<li>
-											<Typography>
-												Example: CT of the maxillofacial area
-											</Typography>
-										</li>
-									</ul>
-								</ul>
-							</Paper>
-							<RadioGroup name="pre-6-2">
-								<FormControlLabel
 									label="Extremely not understanable"
 									control={<Radio />}
 									value="1"
@@ -640,84 +662,104 @@ const Presurvey = () => {
 							</RadioGroup>
 						</FormControl>
 					</Box>
+					<Box sx={{ maxWidth: "50%" }}>
+						<FormControl required sx={{ padding: 3 }}>
+							<FormLabel>
+								6-2. Based on the instruction above, how confident are you in
+								annotating <b>Medication</b> in a document?
+							</FormLabel>
+
+							<RadioGroup name="pre-6-2">
+								<FormControlLabel
+									label="Extremely unconfident"
+									control={<Radio />}
+									value="1"
+								/>
+								<FormControlLabel
+									label="Moderately unconfident"
+									control={<Radio />}
+									value="2"
+								/>
+								<FormControlLabel
+									label="Slightly unconfident"
+									control={<Radio />}
+									value="3"
+								/>
+								<FormControlLabel
+									label="Nor confident nor unconfident"
+									control={<Radio />}
+									value="4"
+								/>
+								<FormControlLabel
+									label="Slightly confident"
+									control={<Radio />}
+									value="5"
+								/>
+								<FormControlLabel
+									label="Moderately confident"
+									control={<Radio />}
+									value="6"
+								/>
+								<FormControlLabel
+									label="Extremely confident"
+									control={<Radio />}
+									value="7"
+								/>
+							</RadioGroup>
+						</FormControl>
+					</Box>
 				</Box>
+				<Typography variant="h6" sx={{ mt: 5 }}>
+					7. Please read the description below, and answer 7-1 and 7-2
+					questions.
+				</Typography>
+				<Paper sx={{ m: 1, p: 2 }} variant="outlined">
+					<Typography variant="h5">
+						<b>Biological Structures</b>
+					</Typography>
+					<Typography
+						mt={2}
+						mb={2}
+						sx={{ fontSize: "18px", fontWeight: 600, color: "#0E7490" }}
+					>
+						Definition
+					</Typography>
+					<Typography sx={{ fontSize: "18px" }}>
+						Biological structures are organs (such as the brain) and systems
+						(such as the nervous system) that influence human behavior. These
+						can include tissues, cells, organisms that reside within the body
+						and even complete organs.
+					</Typography>
+					<Typography
+						mt={2}
+						mb={2}
+						sx={{ fontSize: "18px", fontWeight: 600, color: "#0E7490" }}
+					>
+						Annotation examples
+					</Typography>
+					<ul>
+						<Typography sx={{ fontSize: "18px" }}>
+							Small lymph nodes are diffused in the{" "}
+							<span style={{ backgroundColor: "#CFFAFE" }}>right lung</span>
+						</Typography>
+					</ul>
+					<ul>
+						<Typography sx={{ fontSize: "18px" }}>
+							The patient has{" "}
+							<span style={{ backgroundColor: "#CFFAFE" }}>chest</span> and{" "}
+							<span style={{ backgroundColor: "#CFFAFE" }}>abdominal</span> pain
+						</Typography>
+					</ul>
+				</Paper>
 				<Box flexDirection={"row"} sx={{ padding: 3, display: "flex" }}>
 					<Box sx={{ maxWidth: "50%" }}>
 						<FormControl required sx={{ padding: 3 }}>
 							<FormLabel>
-								7-1. How confident are you in identifying medications that
-								include its brand names, amount, dose, frequency, and mode only
-								when used as modifiers?
+								7-1. How clearly do you understand this instruction to annotate
+								data associate with <b>Biological Structures</b>?
 							</FormLabel>
 							<RadioGroup name="pre-7-1">
 								<FormControlLabel
-									label="Extremely unconfident"
-									control={<Radio />}
-									value="1"
-								/>
-								<FormControlLabel
-									label="Moderately unconfident"
-									control={<Radio />}
-									value="2"
-								/>
-								<FormControlLabel
-									label="Slightly unconfident"
-									control={<Radio />}
-									value="3"
-								/>
-								<FormControlLabel
-									label="Nor confident nor unconfident"
-									control={<Radio />}
-									value="4"
-								/>
-								<FormControlLabel
-									label="Slightly confident"
-									control={<Radio />}
-									value="5"
-								/>
-								<FormControlLabel
-									label="Moderately confident"
-									control={<Radio />}
-									value="6"
-								/>
-								<FormControlLabel
-									label="Extremely confident"
-									control={<Radio />}
-									value="7"
-								/>
-							</RadioGroup>
-						</FormControl>
-					</Box>
-					<Box sx={{ maxWidth: "50%" }}>
-						<FormControl required sx={{ padding: 3 }}>
-							<FormLabel>
-								7-2. Below is the description to help you identify labels. How
-								well do you understand this description to annotate data
-								associate with <b>Medication</b>?
-							</FormLabel>
-							<Paper sx={{ m: 1 }} variant="outlined">
-								<ul>
-									<li>
-										{" "}
-										<Typography sx={{ fontSize: "18px" }}>
-											Medication : A list of medications that contains drugs and
-											drug instructions. Medications that include its brand
-											names, amount, dose, frequency, and mode only when used as
-											modifiers
-										</Typography>
-									</li>
-									<ul>
-										<li>
-											<Typography>
-												Example: Lasix, regular sliding scale insulin, Plavix 75
-												mg Tablet twice daily before meals
-											</Typography>
-										</li>
-									</ul>
-								</ul>
-							</Paper>
-							<RadioGroup name="pre-7-2">
-								<FormControlLabel
 									label="Extremely not understanable"
 									control={<Radio />}
 									value="1"
@@ -755,83 +797,111 @@ const Presurvey = () => {
 							</RadioGroup>
 						</FormControl>
 					</Box>
+					<Box sx={{ maxWidth: "50%" }}>
+						<FormControl required sx={{ padding: 3 }}>
+							<FormLabel>
+								7-2. Based on the instruction above, how confident are you in
+								annotating <b>Biological structures</b> in a document?
+							</FormLabel>
+
+							<RadioGroup name="pre-7-2">
+								<FormControlLabel
+									label="Extremely unconfident"
+									control={<Radio />}
+									value="1"
+								/>
+								<FormControlLabel
+									label="Moderately unconfident"
+									control={<Radio />}
+									value="2"
+								/>
+								<FormControlLabel
+									label="Slightly unconfident"
+									control={<Radio />}
+									value="3"
+								/>
+								<FormControlLabel
+									label="Nor confident nor unconfident"
+									control={<Radio />}
+									value="4"
+								/>
+								<FormControlLabel
+									label="Slightly confident"
+									control={<Radio />}
+									value="5"
+								/>
+								<FormControlLabel
+									label="Moderately confident"
+									control={<Radio />}
+									value="6"
+								/>
+								<FormControlLabel
+									label="Extremely confident"
+									control={<Radio />}
+									value="7"
+								/>
+							</RadioGroup>
+						</FormControl>
+					</Box>
 				</Box>
+				<Typography variant="h6" sx={{ mt: 5 }}>
+					8. Please read the instruction below, and answer 8-1 and 8-2
+					questions.
+				</Typography>
+				<Paper sx={{ m: 1, p: 2 }} variant="outlined">
+					<Typography variant="h5">
+						<b>Clinical event</b>
+					</Typography>
+					<Typography
+						mt={2}
+						mb={2}
+						sx={{ fontSize: "18px", fontWeight: 600, color: "#0E7490" }}
+					>
+						Definition
+					</Typography>
+					<Typography sx={{ fontSize: "18px" }}>
+						All those happenings of medical interest which patients undergo
+						during a clinical study.
+					</Typography>
+					<Typography
+						mt={2}
+						mb={2}
+						sx={{ fontSize: "18px", fontWeight: 600, color: "#0E7490" }}
+					>
+						Annotation examples
+					</Typography>
+					<ul>
+						<Typography sx={{ fontSize: "18px" }}>
+							He underwent{" "}
+							<span style={{ backgroundColor: "#CFFAFE" }}>
+								nephrostomy tube placement
+							</span>
+							. The nephrostomy tube was removed the next day
+						</Typography>
+					</ul>
+					<ul>
+						<Typography sx={{ fontSize: "18px" }}>
+							his cancer, her medications,{" "}
+							<span style={{ backgroundColor: "#CFFAFE" }}>
+								the patient’s surgery
+							</span>
+							,{" "}
+							<span style={{ backgroundColor: "#CFFAFE" }}>
+								an appendectomy
+							</span>
+							, the patient’s tumor.
+						</Typography>
+					</ul>
+				</Paper>
 				<Box flexDirection={"row"} sx={{ padding: 3, display: "flex" }}>
 					<Box sx={{ maxWidth: "50%" }}>
 						<FormControl required sx={{ padding: 3 }}>
 							<FormLabel>
-								8-1. How confident are you in{" "}
-								<b>
-									identifying events that patient undergo during a clinical
-									study
-								</b>
-								?
+								8-1. How clearly do you understand this instruction to annotate
+								data associate with <b>Clinical events</b>?
 							</FormLabel>
 							<RadioGroup name="pre-8-1">
 								<FormControlLabel
-									label="Extremely unconfident"
-									control={<Radio />}
-									value="1"
-								/>
-								<FormControlLabel
-									label="Moderately unconfident"
-									control={<Radio />}
-									value="2"
-								/>
-								<FormControlLabel
-									label="Slightly unconfident"
-									control={<Radio />}
-									value="3"
-								/>
-								<FormControlLabel
-									label="Nor confident nor unconfident"
-									control={<Radio />}
-									value="4"
-								/>
-								<FormControlLabel
-									label="Slightly confident"
-									control={<Radio />}
-									value="5"
-								/>
-								<FormControlLabel
-									label="Moderately confident"
-									control={<Radio />}
-									value="6"
-								/>
-								<FormControlLabel
-									label="Extremely confident"
-									control={<Radio />}
-									value="7"
-								/>
-							</RadioGroup>
-						</FormControl>
-					</Box>
-					<Box sx={{ maxWidth: "50%" }}>
-						<FormControl required sx={{ padding: 3 }}>
-							<FormLabel>
-								8-2. Below is the description to help you identify labels. How
-								well do you understand this description to annotate data
-								associate with <b>Biological structure</b>?
-							</FormLabel>
-							<Paper sx={{ m: 1 }} variant="outlined">
-								<ul>
-									<li>
-										{" "}
-										<Typography sx={{ fontSize: "18px" }}>
-											Biological structure :{" "}
-										</Typography>
-									</li>
-									<ul>
-										<li>
-											<Typography>
-												Example: a therapy, hospitalization, blood sampling
-											</Typography>
-										</li>
-									</ul>
-								</ul>
-							</Paper>
-							<RadioGroup name="pre-8-2">
-								<FormControlLabel
 									label="Extremely not understanable"
 									control={<Radio />}
 									value="1"
@@ -863,6 +933,52 @@ const Presurvey = () => {
 								/>
 								<FormControlLabel
 									label="Extremely understandable"
+									control={<Radio />}
+									value="7"
+								/>
+							</RadioGroup>
+						</FormControl>
+					</Box>
+					<Box sx={{ maxWidth: "50%" }}>
+						<FormControl required sx={{ padding: 3 }}>
+							<FormLabel>
+								8-2. Based on the instruction above, how confident are you in
+								annotating <b>Clinical events</b> in a document??
+							</FormLabel>
+
+							<RadioGroup name="pre-8-2">
+								<FormControlLabel
+									label="Extremely unconfident"
+									control={<Radio />}
+									value="1"
+								/>
+								<FormControlLabel
+									label="Moderately unconfident"
+									control={<Radio />}
+									value="2"
+								/>
+								<FormControlLabel
+									label="Slightly unconfident"
+									control={<Radio />}
+									value="3"
+								/>
+								<FormControlLabel
+									label="Nor confident nor unconfident"
+									control={<Radio />}
+									value="4"
+								/>
+								<FormControlLabel
+									label="Slightly confident"
+									control={<Radio />}
+									value="5"
+								/>
+								<FormControlLabel
+									label="Moderately confident"
+									control={<Radio />}
+									value="6"
+								/>
+								<FormControlLabel
+									label="Extremely confident"
 									control={<Radio />}
 									value="7"
 								/>
@@ -870,75 +986,56 @@ const Presurvey = () => {
 						</FormControl>
 					</Box>
 				</Box>
+				<Typography variant="h6" sx={{ mt: 5 }}>
+					9. Please read the instruction below, and answer 9-1 and 9-2
+					questions.
+				</Typography>
+				<Paper sx={{ m: 1, p: 2 }} variant="outlined">
+					<Typography variant="h5">
+						<b>Disease disorder</b>
+					</Typography>
+					<Typography
+						mt={2}
+						mb={2}
+						sx={{ fontSize: "18px", fontWeight: 600, color: "#0E7490" }}
+					>
+						Definition
+					</Typography>
+					<Typography sx={{ fontSize: "18px" }}>
+						An abnormal condition of a part, organ, or system of an organism
+						resulting from various causes, such as infection, inflammation,
+						environmental factors, or genetic defect, and characterized by an
+						identifiable group of signs, symptoms, or both.
+					</Typography>
+					<Typography
+						mt={2}
+						mb={2}
+						sx={{ fontSize: "18px", fontWeight: 600, color: "#0E7490" }}
+					>
+						Annotation examples
+					</Typography>
+					<ul>
+						<Typography sx={{ fontSize: "18px" }}>
+							<span style={{ backgroundColor: "#CFFAFE" }}>his cancer</span>,
+							her medications, the patient’s surgery, an appendectomy, the
+							patient’s tumor.
+						</Typography>
+					</ul>
+					<ul>
+						<Typography sx={{ fontSize: "18px" }}>
+							Patient was suffering from lung{" "}
+							<span style={{ backgroundColor: "#CFFAFE" }}>cancer</span>
+						</Typography>
+					</ul>
+				</Paper>
 				<Box flexDirection={"row"} sx={{ padding: 3, display: "flex" }}>
 					<Box sx={{ maxWidth: "50%" }}>
 						<FormControl required sx={{ padding: 3 }}>
 							<FormLabel>
-								9-1. How confident are you in recognizing disease / disorder
-								names?
+								9-1. How clearly do you understand this instruction to annotate
+								data associate with <b>Disease / disorder</b>
 							</FormLabel>
 							<RadioGroup name="pre-9-1">
-								<FormControlLabel
-									label="Extremely unconfident"
-									control={<Radio />}
-									value="1"
-								/>
-								<FormControlLabel
-									label="Moderately unconfident"
-									control={<Radio />}
-									value="2"
-								/>
-								<FormControlLabel
-									label="Slightly unconfident"
-									control={<Radio />}
-									value="3"
-								/>
-								<FormControlLabel
-									label="Nor confident nor unconfident"
-									control={<Radio />}
-									value="4"
-								/>
-								<FormControlLabel
-									label="Slightly confident"
-									control={<Radio />}
-									value="5"
-								/>
-								<FormControlLabel
-									label="Moderately confident"
-									control={<Radio />}
-									value="6"
-								/>
-								<FormControlLabel
-									label="Extremely confident"
-									control={<Radio />}
-									value="7"
-								/>
-							</RadioGroup>
-						</FormControl>
-					</Box>
-					<Box sx={{ maxWidth: "50%" }}>
-						<FormControl required sx={{ padding: 3 }}>
-							<FormLabel>
-								9-2. Below is the description to help you identify labels. How
-								well do you understand this description to annotate data
-								associate with disease disorders?
-							</FormLabel>
-							<Paper sx={{ m: 1 }} variant="outlined">
-								<ul>
-									<li>
-										<Typography sx={{ fontSize: "18px" }}>
-											Disease disorder : Disease caused by the organism or the
-											specialization of disease on the patient species
-										</Typography>
-									</li>
-									<ul>
-										<li>
-											<Typography>Example: facial bone fracture</Typography>
-										</li>
-									</ul>
-								</ul>
-							</Paper>
-							<RadioGroup name="pre-9-2">
 								<FormControlLabel
 									label="Extremely not understanable"
 									control={<Radio />}
@@ -971,6 +1068,52 @@ const Presurvey = () => {
 								/>
 								<FormControlLabel
 									label="Extremely understandable"
+									control={<Radio />}
+									value="7"
+								/>
+							</RadioGroup>
+						</FormControl>
+					</Box>
+					<Box sx={{ maxWidth: "50%" }}>
+						<FormControl required sx={{ padding: 3 }}>
+							<FormLabel>
+								9-2. Based on the instruction above, how confident are you in
+								annotating <b>Disease / disorder</b> in a document?
+							</FormLabel>
+
+							<RadioGroup name="pre-9-2">
+								<FormControlLabel
+									label="Extremely unconfident"
+									control={<Radio />}
+									value="1"
+								/>
+								<FormControlLabel
+									label="Moderately unconfident"
+									control={<Radio />}
+									value="2"
+								/>
+								<FormControlLabel
+									label="Slightly unconfident"
+									control={<Radio />}
+									value="3"
+								/>
+								<FormControlLabel
+									label="Nor confident nor unconfident"
+									control={<Radio />}
+									value="4"
+								/>
+								<FormControlLabel
+									label="Slightly confident"
+									control={<Radio />}
+									value="5"
+								/>
+								<FormControlLabel
+									label="Moderately confident"
+									control={<Radio />}
+									value="6"
+								/>
+								<FormControlLabel
+									label="Extremely confident"
 									control={<Radio />}
 									value="7"
 								/>
@@ -979,56 +1122,6 @@ const Presurvey = () => {
 					</Box>
 				</Box>
 
-				{/* <FormControl required sx={{ padding: 3 }}>
-					<FormLabel>
-						4. How knowledgeable are you in identifying 7 classes below?
-						<Paper sx={{ padding: 2 }} variant="outlined">
-							<ul>
-								<li>
-									Clinical event: All those happenings of medical interest which
-									patients undergo during a clinical study (e.g. a therapy, a
-									blood sample or a hospitalization)
-								</li>
-								<li>
-									Lab_value: Reference values that labs admit as the range of
-									normal status
-								</li>
-								<li> Sign_sympton</li>
-								<li> Diagnostic_procedure</li>
-								<li> Medication</li>
-								<li> Biological structure</li>
-								<li> Disease_disorder</li>
-							</ul>
-						</Paper>
-					</FormLabel>
-					<RadioGroup name="radio-group-4">
-						<FormControlLabel
-							label="Not knowledgeable at all"
-							control={<Radio />}
-							value="1"
-						/>
-						<FormControlLabel
-							label="Slightly knowledgeable"
-							control={<Radio />}
-							value="2"
-						/>
-						<FormControlLabel
-							label="Moderately knowledgeable"
-							control={<Radio />}
-							value="3"
-						/>
-						<FormControlLabel
-							label="Very knowledgeable"
-							control={<Radio />}
-							value="4"
-						/>
-						<FormControlLabel
-							label="Extremly knowledgeable"
-							control={<Radio />}
-							value="5"
-						/>
-					</RadioGroup>
-				</FormControl> */}
 				<Button type="submit" variant="outlined" value="Submit">
 					Submit
 				</Button>
